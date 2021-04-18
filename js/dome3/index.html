@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <select id="region-select">
+      <option>所有数据</option>
+      <option>华东</option>
+      <option>华南</option>
+      <option>华北</option>
+    </select>
+
+    <div id="table-wrapper"></div>
+
+    <script type="module">
+      import sourceData from './ife31data.js';
+      const select = document.getElementById('region-select');
+      const tablebar = document.getElementById('table-wrapper');
+
+      //获取选中项
+      function getselect(el) {
+        let index = el.selectedIndex;
+        let item = el[index].value;
+        return item;
+      }
+
+      //监听选择事件
+      select.addEventListener(
+        'change',
+        function () {
+          let data = getdata();
+          updata(data);
+        },
+        false
+      );
+
+      //根据select选项获取数据
+      function getdata() {
+        let dataAll = getselect(select);
+        let data = [];
+        for (let i in sourceData) {
+          if (sourceData[i].region === dataAll) {
+            data.push(sourceData[i]);
+          }
+        }
+        return data;
+      }
+
+      //渲染新的表格
+      function updata(data) {
+        let creattab = `<table>
+        <th>商品</th>
+        <th>地区</th>
+        <th>1月</th>
+        <th>2月</th>
+        <th>3月</th>
+        <th>4月</th>
+        <th>5月</th>
+        <th>6月</th>
+        <th>7月</th>
+        <th>8月</th>
+        <th>9月</th>
+        <th>10月</th>
+        <th>11月</th>
+        <th>12月</th>
+      </table>`;
+
+        //循环填充内容
+        let content;
+
+        for (const iterator of data) {
+          console.log(data[0]);
+        }
+
+        tablebar.innerHTML = creattab;
+      }
+    </script>
+  </body>
+</html>
