@@ -56,7 +56,8 @@ function generate(checkboxDiv, checkboxOption) {
   checkboxDiv.onclick = function (e) {
     var source = e.target;
     if (source.type == 'checkbox') {
-      var customA = source.getAttribute('checkbox-type');
+      var customA = source.getAttribute('checkbox-type'
+      );
       var input2 = source.parentNode.parentNode
         .querySelector('span:nth-of-type(2)')
         .querySelector('input');
