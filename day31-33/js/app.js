@@ -33,9 +33,20 @@ function updata(data) {
   //每次更新数据的时候先清空表单中的所有内容
   el.innerHTML = '';
   let table = document.createElement('table');
-  let tr = document.createElement('tr');
-  tr.innerHTML =
-    '<td>地区</td><td>商品</td><td>一月份</td><td>二月份</td><td>三月份</td><td>四月份</td>';
+  table.border = '1';
+  let tr1 = document.createElement('tr');
+  tr1.innerHTML =
+    '<th>地区</th><th>商品</th><th>一月份</th><th>二月份</th><th>三月份</th><th>四月份</th><th>五月份</th><th>六月份</th><th>七月份</th><th>八月份</th><th>九月份</th><th>十一月份</th><th>十二月份</th>';
   el.appendChild(table);
-  table.appendChild(tr);
+  table.appendChild(tr1);
+
+  for (let i = 0; i < data.length; i++) {
+    let tr2 = document.createElement('tr');
+    for (let j = 0; j < data[i].sale.length; j++) {
+      console.log(j);
+    }
+    table.appendChild(tr2);
+  }
+
+  console.log(data);
 }
