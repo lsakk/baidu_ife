@@ -1,55 +1,41 @@
-window.onload = function () {
-  //获取节点
-  const getAllSelect = document.querySelector('#region-radio-wrapper');
-  getdata(getAllSelect, sourceData);
-  getAllSelect.addEventListener(
-    'click',
-    e => {
-      let inputAll = document.querySelectorAll(
-        '#region-radio-wrapper > span> input'
-      );
-      //判断是否选中元素
-      if (e.target.type != 'checkbox') {
-        return 0;
-      }
+//获取节点
+const getAllSelect = document.querySelector('#region-radio-wrapper');
 
-      let inputArr = [];
-      for (let i = 0; i < inputAll.length; i++) {
-        if (inputAll[i].checked == true) {
-          inputArr.push(inputAll[i].value);
-        }
-      }
-      updata(getdata(inputArr, sourceData));
-    },
-    false
-  );
-};
+//监听事件
+getAllSelect.addEventListener(
+  'click',
+  e => {
+    let el = e.target || window.event;
+    if (el.nodeName === 'INPUT') {
+      updata(getdata());
+    }
+  },
+  false
+);
+
 //根据checkbox选项获取选中项，同时获取所有数据进行排序
-function getdata(data, sourceData) {
-  let arrs = [];
-  //如果数组不为空，使用选项框的value作为筛选条件
-  if (data.length != 0) {
-    for (let i = 0; i < data.length; i++) {
-      for (let j = 0; j < sourceData.length; j++) {
-        if (sourceData[j].region == data[i]) {
-          arrs.push(sourceData[j]);
-        }
-      }
+function getdata() {
+  let arrs = Array();
+  //获取节点，循环判断
+  let el = document.querySelectorAll('#region-radio-wrapper input');
+  for (let index = 0; index < el.length; index++) {
+    if (el[index].checked && el[index].value == sourceData[index].region) {
+      arrs.push(sourceData[index]);
     }
   }
-  //返回筛选后的数据
   return arrs;
 }
 
 //渲染新的表格
 function updata(data) {
-  console.log(data);
-  let thHeader = new Array();
-  if (data.length != 0) {
-    for (let i = 0; i < data.length; i++) {
-     
-    }
-  }
-
-  let th = document.createElement('th');
+  //获取表格包裹div节点
+  let el = document.querySelector('#table-wrapper');
+  //每次更新数据的时候先清空表单中的所有内容
+  el.innerHTML = '';
+  let table = document.createElement('table');
+  let tr = document.createElement('tr');
+  tr.innerHTML =
+    '<td>地区</td><td>商品</td><td>一月份</td><td>二月份</td><td>三月份</td><td>四月份</td>';
+  el.appendChild(table);
+  table.appendChild(tr);
 }
