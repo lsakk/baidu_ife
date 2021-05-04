@@ -1,0 +1,115 @@
+.title h1 {
+  background-color: #858585;
+  margin: 0;
+  padding: 20px;
+  color: #ffffff;
+}
+/* 基本信息 */
+.body .jbxx {
+  overflow: hidden;
+  border-bottom: 2px solid #dfdfdf;
+}
+.body .jbxx h4 {
+  padding: 10px 10px 0px 10px;
+}
+.body .jbxx span {
+  padding: 10px 50px 0px 10px;
+}
+.body .jbxx h2 {
+  background-color: rgb(214, 214, 214);
+  height: 100%;
+  width: 200px;
+  text-align: center;
+  padding: 25px;
+}
+.body .jbxx h2,
+h4,
+span {
+  float: left;
+  margin: 0;
+}
+
+/* 联系方式 */
+.body .lxfs {
+  overflow: hidden;
+  border-bottom: 2px solid #dfdfdf;
+}
+.body .lxfs h4 {
+  padding: 10px 10px 0px 10px;
+}
+.body .lxfs span {
+  padding: 10px 50px 0px 10px;
+}
+.body .lxfs h2 {
+  background-color: rgb(214, 214, 214);
+  height: 100%;
+  width: 200px;
+  text-align: center;
+  padding: 25px;
+}
+.body .lxfs h2,
+h4,
+span {
+  float: left;
+  margin: 0;
+}
+
+/* 能力描述 */
+.body .nlms {
+  overflow: hidden;
+  border-bottom: 2px solid #dfdfdf;
+}
+.body .nlms h2 {
+  background-color: rgb(214, 214, 214);
+  height: 100%;
+  width: 200px;
+  text-align: center;
+  padding: 25px;
+}
+.body .nlms h2,
+p,
+span {
+  float: left;
+  margin: 0;
+}
+span {
+  padding-right: 200px;
+}
+
+/* 教育经历 */
+.body .jyjl {
+  overflow: hidden;
+  border-bottom: 2px solid #dfdfdf;
+}
+.body .jyjl h2 {
+  background-color: rgb(214, 214, 214);
+  height: 100%;
+  width: 200px;
+  text-align: center;
+  padding: 25px;
+}
+.body .jyjl h2,
+p,
+span {
+  float: left;
+  margin: 0;
+}
+
+/* 项目经历 */
+.body .xmjy {
+  overflow: hidden;
+  border-bottom: 2px solid #dfdfdf;
+}
+.body .xmjy h2 {
+  background-color: rgb(214, 214, 214);
+  height: 100%;
+  width: 200px;
+  text-align: center;
+  padding: 25px;
+}
+.body .xmjy h2,
+p,
+span {
+  float: left;
+  margin: 0;
+}
